@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:j2ee="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="3.0">
+  <description>Atmosphere Chat</description>
+  <display-name>Atmosphere Chat</display-name>
+  <servlet>
+    <description>MeteorServlet</description>
+    <servlet-name>MeteorServlet</servlet-name>
+    <servlet-class>org.atmosphere.cpr.MeteorServlet</servlet-class>
+    <init-param>
+      <param-name>org.atmosphere.cpr.packages</param-name>
+      <param-value>org.atmosphere.samples</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+    <async-supported>true</async-supported>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MeteorServlet</servlet-name>
+    <url-pattern>/meteor</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <session-timeout>25</session-timeout>
+  </session-config>
+</web-app>
