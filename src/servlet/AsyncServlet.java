@@ -25,7 +25,7 @@ import org.atmosphere.interceptor.AtmosphereResourceLifecycleInterceptor;
 public class AsyncServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private static int i = 0;
+	private static Random random = new Random();
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws IOException {
@@ -44,7 +44,7 @@ public class AsyncServlet extends HttpServlet {
 		meteor.schedule(new Callable<String>() {
 			@Override
 			public String call() throws Exception {
-				return "Random Number " + (i++);
+				return "Random Number: " + random.nextInt();
 			}
 		}, 2);
 		
